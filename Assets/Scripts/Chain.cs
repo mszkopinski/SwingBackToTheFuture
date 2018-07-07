@@ -18,7 +18,7 @@ public class Chain : MonoBehaviour
 
 	bool isChainEndAnimated = false;
 
-	void Update() 
+	void FixedUpdate() 
 	{
 		if (!isChainEndAnimated)
 			return;

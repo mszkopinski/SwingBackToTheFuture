@@ -31,7 +31,9 @@ public class CameraController : MonoSingleton<CameraController>
         void OnPlayerInstantiated(object obj, System.EventArgs args)
         {
             var player = obj as Player;
-            targetTransform = player?.transform;
+            var cwanyComponent = player.gameObject.GetComponent(typeof(CwanySkrypt));
+
+            targetTransform = cwanyComponent != null ? cwanyComponent.transform : player?.transform;
         }
 
 
