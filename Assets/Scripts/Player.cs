@@ -5,10 +5,13 @@ public class Player : MonoSingleton<Player>
 {
     [SerializeField] public float playerSitAssOffset = -8f;
 
+    [Header("Death")]
+    [SerializeField] float deathDistance = 5f;
+
     [Header("Debug")]
     [SerializeField] bool enablePlayerLogging = false;
 
-    float playerReleasedLastYPosition = 0;
+    float? playerReleasedLastYPosition = null;
     public bool IsPlayerPlaced 
     {
         get { return isPlayerPlaced; }
@@ -19,6 +22,8 @@ public class Player : MonoSingleton<Player>
 
             isPlayerPlaced = value;
 
+            if (isPlayerPlaced == false)
+                playerReleasedLastYPosition = transform.position.y;
         }
     }
     public Vector3 PlayerPlacedPosition { get; private set; }
@@ -46,9 +51,15 @@ public class Player : MonoSingleton<Player>
 
     void Update()
     {
-        if (playerReleasedLastYPosition != 0)
+        if (playerReleasedLastYPosition != null)
         {
-            
+            var distance = playerReleasedLastYPosition.Value - transform.position.y;
+
+            if (distance >= deathDistance)
+            {
+                RestartGameUI.Instance.ToggleOnRestartGamePanel();
+                playerReleasedLastYPosition = null;
+            }
         }
     }
 
@@ -57,12 +68,7 @@ public class Player : MonoSingleton<Player>
         if (enablePlayerLogging)
             Debug.Log("Setting Player Placement" + swingSitTransform.position);
 
-        PlayerAnimator.SetBool("isLyingForward", false);
-        PlayerAnimator.SetBool("isLyingBackward", false);
-        PlayerAnimator.SetBool("isLaunched", false);
-
-        rb.isKinematic = true;
-        rb.useGravity = false;
+        FreezePlayer();
 
         transform.parent = swingSitTransform;
         transform.position = swingSitTransform.position;
@@ -71,10 +77,15 @@ public class Player : MonoSingleton<Player>
         IsPlayerPlaced = true;
     }
 
-    void Respawn()
+    void FreezePlayer()
     {
-        ResetRotation();
-    }   
+        PlayerAnimator.SetBool("isLyingForward", false);
+        PlayerAnimator.SetBool("isLyingBackward", false);
+        PlayerAnimator.SetBool("isLaunched", false);
+
+        rb.isKinematic = true;
+        rb.useGravity = false;
+    }
 
     void ResetRotation()
     {
