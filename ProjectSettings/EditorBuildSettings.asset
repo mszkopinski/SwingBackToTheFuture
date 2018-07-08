@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Tomek/Game_4_SuperKopia.unity
-    guid: 924bc3ba89efec34cadd5ca4194ceb11
+    path: Assets/Tomek/Game_4_SuperKopiaKopiKopia.unity
+    guid: 0c9e9189d4d248b45b6e86b6e2ab8338
   m_configObjects: {}
