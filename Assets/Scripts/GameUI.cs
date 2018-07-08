@@ -38,4 +38,9 @@ public class GameUI : MonoSingleton<GameUI>
 	{
 		canvas.enabled = true;
 	}
+
+	public void DisableGameUI()
+	{
+		canvas.enabled = false;
+	}
 }
