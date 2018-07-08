@@ -461,6 +461,7 @@ MonoBehaviour:
   baseSwingReleaseForce: 100
   swingVelocityDivider: 7
   playerEnterForceMultiplier: 5
+  debugLogging: 0
 --- !u!114 &114358924882713690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -522,11 +523,11 @@ MonoBehaviour:
   swingSitPushForce: 500
   leftSwingSitHook: {fileID: 4539103598776040}
   rightSwingSitHook: {fileID: 4948242982021448}
-  minimumSwingPushAngle: 30
+  minimumSwingPushAngle: 15
   maximumSwingPushAngle: 45
   isHooked: 1
   IsControlledSwing: 1
-  IsControlledInitialy: 1
+  IsControlledInitialy: 0
 --- !u!114 &114844715149063656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -582,12 +583,12 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 6.69, z: -5.5}
-  - {x: -0.004270755, y: 5.3566666, z: -5.505885}
-  - {x: -0.0073971655, y: 4.157308, z: -5.5101933}
-  - {x: -0.00854151, y: 3.19, z: -5.5117702}
-  - {x: -0.007397165, y: 2.490641, z: -5.5101933}
-  - {x: -0.0042707557, y: 2.0233335, z: -5.505885}
-  - {x: 7.467226e-10, y: 1.6900002, z: -5.5}
+  - {x: 0.013700037, y: 5.3566666, z: -5.5024962}
+  - {x: 0.023729162, y: 4.157308, z: -5.5043235}
+  - {x: 0.027400075, y: 3.19, z: -5.5049925}
+  - {x: 0.02372916, y: 2.490641, z: -5.5043235}
+  - {x: 0.013700039, y: 2.0233335, z: -5.5024962}
+  - {x: -0.0000000023953906, y: 1.6900002, z: -5.5}
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.1
@@ -679,12 +680,12 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 6.69, z: -4.5}
-  - {x: 0.02177654, y: 5.3566666, z: -4.4967656}
-  - {x: 0.037718076, y: 4.157308, z: -4.494398}
-  - {x: 0.04355308, y: 3.19, z: -4.493531}
-  - {x: 0.037718073, y: 2.490641, z: -4.494398}
-  - {x: 0.021776542, y: 2.0233335, z: -4.4967656}
-  - {x: -0.000000003807531, y: 1.6900002, z: -4.5}
+  - {x: 0.005053432, y: 5.3566666, z: -4.505739}
+  - {x: 0.008752801, y: 4.157308, z: -4.5099406}
+  - {x: 0.010106864, y: 3.19, z: -4.5114784}
+  - {x: 0.008752801, y: 2.490641, z: -4.5099406}
+  - {x: 0.0050534327, y: 2.0233335, z: -4.505739}
+  - {x: -8.8357016e-10, y: 1.6900002, z: -4.5}
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.1

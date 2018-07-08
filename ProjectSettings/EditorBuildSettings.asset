@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Game.unity
-    guid: f30264ef86f46424dac85441d5458301
+    path: Assets/Tomek/Game_4_cop.unity
+    guid: 8006f53c0900ff3429ea1bfb5dbe08bf
   m_configObjects: {}

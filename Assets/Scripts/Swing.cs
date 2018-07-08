@@ -59,7 +59,7 @@ public class Swing : MonoBehaviour
 	void Update()
 	{
 		var angleToSwingSit = CalculateAngleToSwingSit();
-		IsInAngleToSwing = (angleToSwingSit >= minimumSwingPushAngle && angleToSwingSit <= maximumSwingPushAngle) || IsControlledInitialy;
+		IsInAngleToSwing = (angleToSwingSit >= minimumSwingPushAngle && angleToSwingSit <= maximumSwingPushAngle && swingSit.transform.localPosition.y <= -2.5) || IsControlledInitialy;
 	}
 
 	void OnSwingButtonPressed(object sender, System.EventArgs args)
@@ -69,6 +69,7 @@ public class Swing : MonoBehaviour
 
 		if (!isSwingButtonRecentlyPressed)
 		{
+			Debug.Log("SWINGUJ KURWOOO");
 			swingSitRigidbody.AddForce((swingSitRigidbody.velocity.x > 0 ? swingSit.transform.right : -swingSit.transform.right) * swingSitPushForce * Time.deltaTime);
 			isSwingButtonRecentlyPressed = true;
 		}
