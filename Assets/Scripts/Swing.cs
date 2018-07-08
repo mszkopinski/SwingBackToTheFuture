@@ -43,7 +43,6 @@ public class Swing : MonoBehaviour
 
 		if ((angleToSwingSit >= minimumSwingPushAngle && angleToSwingSit <= maximumSwingPushAngle) || IsControlledInitialy)
 		{
-			Debug.Log("Now you can try to push.");
 			HandleSwingSitPush();
 		}
 	}

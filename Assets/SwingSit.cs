@@ -40,8 +40,6 @@ public class SwingSit : MonoBehaviour
 		if (placedPlayer == null || !parentSwing.IsControlledSwing)
 			return;
 
-		Debug.Log("Release the kraken");
-
 		placedPlayer.gameObject.transform.parent = null;
 
 		var playerRigidbody = placedPlayer.GetComponent<Rigidbody>();
@@ -54,6 +52,8 @@ public class SwingSit : MonoBehaviour
 
 			playerRigidbody.AddForce(pushForce * Time.deltaTime, ForceMode.Impulse);
 			playerRigidbody.angularVelocity = new Vector3(0f, 0f, rb.velocity.x / 3f);
+
+        	placedPlayer.GetComponent<Player>().PlayerAnimator.SetBool("isLaunched", true);
 		}
 
 		placedPlayer = null;
@@ -72,8 +72,11 @@ public class SwingSit : MonoBehaviour
 
 		if (playerComponent != null && placedPlayer == null)
 		{
-			Debug.Log("Player is in range of sit");
 			var player = playerComponent as Player;
+
+			if (player.IsPlayerPlaced)
+				return;
+				
 			var playerRigidbody = player.GetComponent<Rigidbody>();
 
 			if (playerRigidbody != null)
@@ -93,7 +96,6 @@ public class SwingSit : MonoBehaviour
 
 		if (playerComponent != null && placedPlayer == null)
 		{
-			Debug.Log("Player has left trigger");
 			parentSwing.IsControlledSwing = false;
 		}
 	}

@@ -8,6 +8,7 @@ public class Player : MonoSingleton<Player>
 
     public bool IsPlayerPlaced;
     public Vector3 PlayerPlacedPosition { get; private set;}
+    public Animator PlayerAnimator { get; private set; }
     
     Quaternion defaultRotation;
 
@@ -15,6 +16,7 @@ public class Player : MonoSingleton<Player>
 
     void Awake()
     {
+        PlayerAnimator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -33,6 +35,9 @@ public class Player : MonoSingleton<Player>
 
     public void SetPlayerPlacement(Transform swingSitTransform)
     {
+        PlayerAnimator.SetBool("isLyingForward", false);
+        PlayerAnimator.SetBool("isLyingBackward", false);
+        PlayerAnimator.SetBool("isLaunched", false);
         IsPlayerPlaced = true;
         rb.isKinematic = true;
         rb.useGravity = false;

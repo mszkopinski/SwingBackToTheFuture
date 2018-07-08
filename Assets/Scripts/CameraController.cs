@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CameraController : MonoSingleton<CameraController> 
 {
@@ -10,22 +11,29 @@ public class CameraController : MonoSingleton<CameraController>
 
         [Header("Speed Settings")]
         [SerializeField] float smoothSpeed = 0.0001f;
-        [SerializeField] float rotationSmoothSpeed = 5f;
-        [SerializeField] float rotationSpeed = 5f;
-
 
         [Header("Triggers")]
         [SerializeField] bool lookAtTarget = true;
 
         Transform targetTransform;
         Vector3 velocity = Vector3.zero;
-        bool isRotating = false;
         Camera cam;
 
         void Awake()
         {
+            Application.targetFrameRate = 60;
             cam = GetComponent<Camera>() ?? Camera.main;
 			Player.Instance.PlayerInstantiated += OnPlayerInstantiated;
+        }
+
+        void Start()
+        {
+            StartGamePanel.Instance.GameStarted += OnGameStarted;
+        }
+
+        void OnGameStarted(object obj, EventArgs args)
+        {
+            GetComponent<Animator>().SetTrigger("isStarted");
         }
 
         void OnPlayerInstantiated(object obj, System.EventArgs args)
@@ -42,7 +50,7 @@ public class CameraController : MonoSingleton<CameraController>
             if (AssertTarget())
             {
                 var targetPos = targetTransform.position + positionOffset;
-                cam.transform.position = Vector3.SmoothDamp(cam.transform.position, targetPos, ref velocity, isRotating ? rotationSmoothSpeed : smoothSpeed);
+                cam.transform.position = Vector3.SmoothDamp(cam.transform.position, targetPos, ref velocity, smoothSpeed);
 
 
                 if (lookAtTarget)
