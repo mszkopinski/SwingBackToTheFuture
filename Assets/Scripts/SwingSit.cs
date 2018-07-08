@@ -28,15 +28,12 @@ public class SwingSit : MonoBehaviour
 			Debug.LogWarning("Parent swing is null");
 	}
 
-	void FixedUpdate() 
+	void Start() 
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			ReleasePlayer();
-		}
+		GameUI.Instance.JumpButtonPressed += ReleasePlayer;
 	}
 
-	void ReleasePlayer()
+	void ReleasePlayer(object sender, System.EventArgs args)
 	{
 		if (placedPlayer == null || !parentSwing.IsControlledSwing)
 			return;

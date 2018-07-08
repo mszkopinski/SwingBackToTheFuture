@@ -21,19 +21,9 @@ public class CameraController : MonoSingleton<CameraController>
 
         void Awake()
         {
-            Application.targetFrameRate = 30;
+            Application.targetFrameRate = 60;
             cam = GetComponent<Camera>() ?? Camera.main;
 			Player.Instance.PlayerInstantiated += OnPlayerInstantiated;
-        }
-
-        void Start()
-        {
-            StartGamePanel.Instance.GameStarted += OnGameStarted;
-        }
-
-        void OnGameStarted(object obj, EventArgs args)
-        {
-            GetComponent<Animator>().SetTrigger("isStarted");
         }
 
         void OnPlayerInstantiated(object obj, System.EventArgs args)

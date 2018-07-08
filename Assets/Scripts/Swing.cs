@@ -20,6 +20,23 @@ public class Swing : MonoBehaviour
 
 	Rigidbody swingSitRigidbody;
 
+	public bool IsInAngleToSwing { 
+		get { return isInAngleToSwing; } 
+		set 
+		{ 
+			if (isInAngleToSwing == value) 
+				return;
+				
+			if (isSwingButtonRecentlyPressed)
+				isSwingButtonRecentlyPressed = false;
+
+			isInAngleToSwing = value;
+			Mediator.Instance.SendNotifications(EventNames.SwingAngleStateChanged, isInAngleToSwing);
+		}
+	}
+	bool isInAngleToSwing = false;
+	bool isSwingButtonRecentlyPressed = false;
+
 	void Awake() 
 	{
 		if (leftChain == null || rightChain == null)
@@ -28,6 +45,7 @@ public class Swing : MonoBehaviour
 			return; 
 		}
 
+
 		leftChain.ChainEndTransform = leftSwingSitHook;
 		rightChain.ChainEndTransform = rightSwingSitHook;
 	}
@@ -35,31 +53,26 @@ public class Swing : MonoBehaviour
 	void Start() 
 	{
 		swingSitRigidbody = swingSit?.GetComponent<Rigidbody>();
+		GameUI.Instance.SwingButtonPressed += OnSwingButtonPressed;
 	}
 
 	void Update()
 	{
 		var angleToSwingSit = CalculateAngleToSwingSit();
-
-		if ((angleToSwingSit >= minimumSwingPushAngle && angleToSwingSit <= maximumSwingPushAngle) || IsControlledInitialy)
-		{
-			HandleSwingSitPush();
-		}
+		IsInAngleToSwing = (angleToSwingSit >= minimumSwingPushAngle && angleToSwingSit <= maximumSwingPushAngle) || IsControlledInitialy;
 	}
 
-	void HandleSwingSitPush()
+	void OnSwingButtonPressed(object sender, System.EventArgs args)
 	{
 		if (swingSitRigidbody == null || !IsControlledSwing)
 			return;
 
-		if (Input.GetKeyDown(KeyCode.RightArrow))
+		if (!isSwingButtonRecentlyPressed)
 		{
-			swingSitRigidbody.AddForce(swingSit.transform.right * swingSitPushForce * Time.deltaTime);
+			swingSitRigidbody.AddForce((swingSitRigidbody.velocity.x > 0 ? swingSit.transform.right : -swingSit.transform.right) * swingSitPushForce * Time.deltaTime);
+			isSwingButtonRecentlyPressed = true;
 		}
-		else if (Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			swingSitRigidbody.AddForce(-swingSit.transform.right * swingSitPushForce * Time.deltaTime);
-		}
+
 	}
 
 	double CalculateAngleToSwingSit()
@@ -70,7 +83,8 @@ public class Swing : MonoBehaviour
 		return Vector3.Angle(new Vector3(root.x, root.y, 0f), new Vector3(swingPosition.x, swingPosition.y, 0f));
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter(Collider other) 
+	{
 		
 	}
 }
