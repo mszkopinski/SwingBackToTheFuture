@@ -17,7 +17,11 @@ public class Swing : MonoBehaviour
 	[SerializeField] public bool IsControlledSwing = false;
 	[SerializeField] bool IsControlledInitialy = false;
 
+	[Header("Sound")]
+	[SerializeField] AudioClip swingAudio;
+
 	Rigidbody swingSitRigidbody;
+	AudioSource audioSource;
 
 	public bool IsInAngleToSwing { 
 		get { return isInAngleToSwing; } 
@@ -38,6 +42,8 @@ public class Swing : MonoBehaviour
 
 	void Awake() 
 	{
+		audioSource = GetComponent<AudioSource>();
+
 		if (leftChain == null || rightChain == null)
 		{
 			Debug.LogError($"No chains attached to {nameof(Swing)}");
@@ -68,6 +74,7 @@ public class Swing : MonoBehaviour
 
 		if (!isSwingButtonRecentlyPressed)
 		{
+			audioSource.PlayOneShot(swingAudio);
 			swingSitRigidbody.AddForce((swingSitRigidbody.velocity.x > 0 ? swingSit.transform.right : -swingSit.transform.right) * swingSitPushForce * Time.deltaTime);
 			isSwingButtonRecentlyPressed = true;
 		}
