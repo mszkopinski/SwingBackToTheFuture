@@ -21,7 +21,7 @@ public class CameraController : MonoSingleton<CameraController>
 
         void Awake()
         {
-            Application.targetFrameRate = 60;
+            Application.targetFrameRate = 30;
             cam = GetComponent<Camera>() ?? Camera.main;
 			Player.Instance.PlayerInstantiated += OnPlayerInstantiated;
         }

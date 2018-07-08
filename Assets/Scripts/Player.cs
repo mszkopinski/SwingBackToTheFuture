@@ -5,7 +5,10 @@ public class Player : MonoSingleton<Player>
 {
     [SerializeField] public float playerSitAssOffset = -8f;
 
-    public bool IsPlayerPlaced { get; private set; } = false;
+    [Header("Debug")]
+    [SerializeField] bool enablePlayerLogging = false;
+
+    public bool IsPlayerPlaced { get; set; } = false;
     public Vector3 PlayerPlacedPosition { get; private set; }
     public Animator PlayerAnimator { get; private set; }
     
@@ -13,7 +16,6 @@ public class Player : MonoSingleton<Player>
     Rigidbody rb;
 
     public EventHandler PlayerInstantiated;
-
 
     void Awake()
     {
@@ -27,26 +29,23 @@ public class Player : MonoSingleton<Player>
         OnPlayerInstatiated();
     }
 
-    void Update() 
-    {
-        if (!IsPlayerPlaced)
-            return;
-
-    }
-
     public void SetPlayerPlacement(Transform swingSitTransform)
     {
+        if (enablePlayerLogging)
+            Debug.Log("Setting Player Placement" + swingSitTransform.position);
+
         PlayerAnimator.SetBool("isLyingForward", false);
         PlayerAnimator.SetBool("isLyingBackward", false);
         PlayerAnimator.SetBool("isLaunched", false);
 
-        IsPlayerPlaced = true;
         rb.isKinematic = true;
         rb.useGravity = false;
 
         transform.parent = swingSitTransform;
         transform.position = swingSitTransform.position;
         transform.rotation = defaultRotation;
+
+        IsPlayerPlaced = true;
     }
 
     protected void OnPlayerInstatiated()
