@@ -28,16 +28,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
   intensity:
     overrideState: 1
-    value: 1.11
+    value: 2.17
   threshold:
     overrideState: 1
-    value: 0.6
+    value: 0
   softKnee:
     overrideState: 0
     value: 0.5
@@ -87,7 +87,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 1
+    value: 0
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: -86.6
+    value: -76.8
   brightness:
     overrideState: 0
     value: 0
@@ -1419,23 +1419,23 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   color:
-    overrideState: 0
+    overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
   center:
-    overrideState: 0
+    overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.514
+    value: 0.352
   smoothness:
     overrideState: 1
     value: 1
   roundness:
     overrideState: 1
-    value: 0.689
+    value: 0.104
   rounded:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   mask:
     overrideState: 0
     value: {fileID: 0}
@@ -1460,13 +1460,13 @@ MonoBehaviour:
     value: 1
   colored:
     overrideState: 1
-    value: 0
+    value: 1
   intensity:
     overrideState: 1
     value: 0.198
   size:
     overrideState: 1
-    value: 0.58
+    value: 1.82
   lumContrib:
     overrideState: 0
     value: 0.721
