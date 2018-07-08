@@ -254,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519499623667142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.69, z: -5}
+  m_LocalPosition: {x: 8.05, y: 9.49, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4881850252299928}
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSwingReleaseForce: 100
   swingVelocityDivider: 7
-  playerEnterForceMultiplier: 5
+  playerEnterForceMultiplier: 1
   debugLogging: 0
 --- !u!114 &114358924882713690
 MonoBehaviour:
@@ -520,13 +520,13 @@ MonoBehaviour:
   leftChain: {fileID: 114358924882713690}
   rightChain: {fileID: 114708814832816144}
   swingSit: {fileID: 1100374478589898}
-  swingSitPushForce: 500
+  swingSitPushForce: 800
   leftSwingSitHook: {fileID: 4539103598776040}
   rightSwingSitHook: {fileID: 4948242982021448}
   minimumSwingPushAngle: 15
   maximumSwingPushAngle: 45
   isHooked: 1
-  IsControlledSwing: 1
+  IsControlledSwing: 0
   IsControlledInitialy: 0
 --- !u!114 &114844715149063656
 MonoBehaviour:
@@ -582,13 +582,13 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 6.69, z: -5.5}
-  - {x: 0.013700037, y: 5.3566666, z: -5.5024962}
-  - {x: 0.023729162, y: 4.157308, z: -5.5043235}
-  - {x: 0.027400075, y: 3.19, z: -5.5049925}
-  - {x: 0.02372916, y: 2.490641, z: -5.5043235}
-  - {x: 0.013700039, y: 2.0233335, z: -5.5024962}
-  - {x: -0.0000000023953906, y: 1.6900002, z: -5.5}
+  - {x: 8.05, y: 9.49, z: -5.5}
+  - {x: 8.036159, y: 8.156667, z: -5.502418}
+  - {x: 8.026025, y: 6.9573073, z: -5.504188}
+  - {x: 8.022316, y: 5.99, z: -5.504836}
+  - {x: 8.026025, y: 5.290641, z: -5.504188}
+  - {x: 8.036159, y: 4.8233333, z: -5.502418}
+  - {x: 8.05, y: 4.49, z: -5.5}
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.1
@@ -679,13 +679,13 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 6.69, z: -4.5}
-  - {x: 0.005053432, y: 5.3566666, z: -4.505739}
-  - {x: 0.008752801, y: 4.157308, z: -4.5099406}
-  - {x: 0.010106864, y: 3.19, z: -4.5114784}
-  - {x: 0.008752801, y: 2.490641, z: -4.5099406}
-  - {x: 0.0050534327, y: 2.0233335, z: -4.505739}
-  - {x: -8.8357016e-10, y: 1.6900002, z: -4.5}
+  - {x: 8.05, y: 9.49, z: -4.5}
+  - {x: 8.025385, y: 8.156667, z: -4.494132}
+  - {x: 8.007366, y: 6.9573073, z: -4.489836}
+  - {x: 8.000771, y: 5.99, z: -4.488264}
+  - {x: 8.007366, y: 5.290641, z: -4.489836}
+  - {x: 8.025385, y: 4.8233333, z: -4.494132}
+  - {x: 8.05, y: 4.49, z: -4.5}
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.1
@@ -750,7 +750,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 1.06
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!153 &153983296802228878
 ConfigurableJoint:
