@@ -5,7 +5,7 @@ public class Player : MonoSingleton<Player>
 {
     [SerializeField] public float playerSitAssOffset = -8f;
 
-    public bool IsPlayerPlaced { get; private set; }
+    public bool IsPlayerPlaced { get; private set; } = false;
     public Vector3 PlayerPlacedPosition { get; private set; }
     public Animator PlayerAnimator { get; private set; }
     

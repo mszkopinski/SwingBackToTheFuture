@@ -5,6 +5,7 @@ public class SwingSit : MonoBehaviour
 	[SerializeField] float baseSwingReleaseForce = 500f;
 	[SerializeField] float swingVelocityDivider = 2f;
 	[SerializeField] float playerEnterForceMultiplier = 2f;
+	[SerializeField] bool debugLogging = false;
 
 	Swing parentSwing;
 	GameObject placedPlayer;
@@ -77,6 +78,9 @@ public class SwingSit : MonoBehaviour
 
 			if (player.IsPlayerPlaced)
 				return;
+
+			if (debugLogging)
+				Debug.Log("Player entered trigger.");
 				
 			var playerRigidbody = player.GetComponent<Rigidbody>();
 
