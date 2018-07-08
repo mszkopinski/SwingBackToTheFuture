@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSitAssOffset: 0
-  IsPlayerPlaced: 1
+  enablePlayerLogging: 1
 --- !u!136 &136325101055630946
 CapsuleCollider:
   m_ObjectHideFlags: 1

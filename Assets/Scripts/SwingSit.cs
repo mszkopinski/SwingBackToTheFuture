@@ -54,7 +54,9 @@ public class SwingSit : MonoBehaviour
 			playerRigidbody.AddForce(pushForce * Time.deltaTime, ForceMode.Impulse);
 			playerRigidbody.angularVelocity = new Vector3(0f, 0f, rb.velocity.x / 3f);
 
-        	placedPlayer.GetComponent<Player>().PlayerAnimator.SetBool("isLaunched", true);
+			var playerComponent = placedPlayer.GetComponent<Player>();
+        	playerComponent.PlayerAnimator.SetBool("isLaunched", true);
+			playerComponent.IsPlayerPlaced = false;
 		}
 
 		placedPlayer = null;
@@ -74,7 +76,6 @@ public class SwingSit : MonoBehaviour
 		if (playerComponent != null && placedPlayer == null)
 		{
 			var player = playerComponent as Player;
-
 
 			if (player.IsPlayerPlaced)
 				return;
