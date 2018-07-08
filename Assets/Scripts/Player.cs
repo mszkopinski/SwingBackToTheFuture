@@ -4,15 +4,16 @@ using System;
 public class Player : MonoSingleton<Player> 
 {
     [SerializeField] public float playerSitAssOffset = -8f;
-    public EventHandler PlayerInstantiated;
 
-    public bool IsPlayerPlaced;
-    public Vector3 PlayerPlacedPosition { get; private set;}
+    public bool IsPlayerPlaced { get; private set; }
+    public Vector3 PlayerPlacedPosition { get; private set; }
     public Animator PlayerAnimator { get; private set; }
     
     Quaternion defaultRotation;
-
     Rigidbody rb;
+
+    public EventHandler PlayerInstantiated;
+
 
     void Awake()
     {
@@ -38,9 +39,11 @@ public class Player : MonoSingleton<Player>
         PlayerAnimator.SetBool("isLyingForward", false);
         PlayerAnimator.SetBool("isLyingBackward", false);
         PlayerAnimator.SetBool("isLaunched", false);
+
         IsPlayerPlaced = true;
         rb.isKinematic = true;
         rb.useGravity = false;
+
         transform.parent = swingSitTransform;
         transform.position = swingSitTransform.position;
         transform.rotation = defaultRotation;

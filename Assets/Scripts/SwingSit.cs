@@ -74,6 +74,7 @@ public class SwingSit : MonoBehaviour
 		{
 			var player = playerComponent as Player;
 
+
 			if (player.IsPlayerPlaced)
 				return;
 				
