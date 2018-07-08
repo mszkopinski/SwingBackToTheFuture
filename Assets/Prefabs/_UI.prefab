@@ -65,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1372462768561696
 GameObject:
   m_ObjectHideFlags: 1
@@ -199,12 +199,12 @@ GameObject:
   - component: {fileID: 114273333751831682}
   - component: {fileID: 114994770888821236}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: StartGameUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1635606270350568
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +356,8 @@ GameObject:
   - component: {fileID: 224115005343545424}
   - component: {fileID: 222693319101751650}
   - component: {fileID: 114629938253036838}
+  - component: {fileID: 114168603783733972}
+  - component: {fileID: 114404450505434040}
   m_Layer: 5
   m_Name: Text (2)
   m_TagString: Untagged
@@ -517,6 +519,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'SWING BACK TO THE '
+--- !u!114 &114168603783733972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866817766088484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 4.81, y: -8.59}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114178689570302724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -688,6 +704,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 12.1, y: -15.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &114404450505434040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866817766088484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 4.81, y: -8.59}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114438325497532584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -834,7 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 260d15d6c136a7e42b9ccd57cccc7289, type: 2}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

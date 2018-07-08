@@ -12,6 +12,7 @@ public class StartGamePanel : MonoSingleton<StartGamePanel>
 	{
 		Time.timeScale = 0f;
 		startGameButton.onClick.AddListener(TogglePanelOn);
+		startGameButton.GetComponent<Animator>().Play("startGameButtonIdle");
 	}
 
 	public void TogglePanelOn() 
