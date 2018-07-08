@@ -20,7 +20,7 @@ MonoBehaviour:
   m_OpaqueDownsampling: 1
   m_SupportsHDR: 0
   m_MSAA: 1
-  m_RenderScale: 0.5
+  m_RenderScale: 0.3
   m_SupportsDynamicBatching: 0
   m_DirectionalShadowsSupported: 0
   m_ShadowAtlasResolution: 1024
