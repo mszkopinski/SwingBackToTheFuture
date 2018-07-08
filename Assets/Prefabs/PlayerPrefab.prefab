@@ -970,9 +970,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1462778443377762}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.98, y: 1.61, z: -5.0479765}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 4572846821088524}
   - {fileID: 4883154751593518}
@@ -1374,7 +1374,7 @@ Animator:
   m_GameObject: {fileID: 1458525146449034}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 232ea5efda976514785f01b1624216cd, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1a7fc20838770645849d83702295363, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSitAssOffset: 0
-  IsPlayerPlaced: 0
+  IsPlayerPlaced: 1
 --- !u!136 &136325101055630946
 CapsuleCollider:
   m_ObjectHideFlags: 1
