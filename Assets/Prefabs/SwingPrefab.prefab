@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 114819980969272478}
   - component: {fileID: 54301940221415986}
   - component: {fileID: 153983296802228878}
+  - component: {fileID: 82928608854313208}
   m_Layer: 0
   m_Name: SwingPrefab
   m_TagString: Untagged
@@ -477,6 +478,101 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
+--- !u!82 &82928608854313208
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519499623667142}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114103756639621350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -557,6 +653,7 @@ MonoBehaviour:
   maximumSwingPushAngle: 45
   IsControlledSwing: 0
   IsControlledInitialy: 0
+  swingAudio: {fileID: 8300000, guid: a8fc2295b44cd514a91829f8c5e700a0, type: 3}
 --- !u!114 &114844715149063656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,12 +709,21 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 6.69, z: -5.5}
+<<<<<<< HEAD
   - {x: 0.02491133, y: 5.3566666, z: -5.4938383}
   - {x: 0.04314769, y: 4.157308, z: -5.489328}
   - {x: 0.04982266, y: 3.19, z: -5.487677}
   - {x: 0.043147687, y: 2.490641, z: -5.489328}
   - {x: 0.024911333, y: 2.0233335, z: -5.4938383}
   - {x: -0.000000004355635, y: 1.6900002, z: -5.5}
+=======
+  - {x: 0.019374123, y: 5.3566666, z: -5.498743}
+  - {x: 0.033556968, y: 4.157308, z: -5.4978228}
+  - {x: 0.038748246, y: 3.19, z: -5.4974856}
+  - {x: 0.033556964, y: 2.490641, z: -5.4978228}
+  - {x: 0.019374125, y: 2.0233335, z: -5.498743}
+  - {x: -0.0000000033874792, y: 1.6900002, z: -5.5}
+>>>>>>> ef6b62c90fc3323262abefa010a9fdd60460d8c2
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.1
@@ -709,12 +815,21 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 6.69, z: -4.5}
+<<<<<<< HEAD
   - {x: 0.02449774, y: 5.3566666, z: -4.4942474}
   - {x: 0.042431332, y: 4.157308, z: -4.490036}
   - {x: 0.04899548, y: 3.19, z: -4.4884944}
   - {x: 0.04243133, y: 2.490641, z: -4.490036}
   - {x: 0.024497744, y: 2.0233335, z: -4.4942474}
   - {x: -0.000000004283321, y: 1.6900002, z: -4.5}
+=======
+  - {x: 0.010950084, y: 5.3566666, z: -4.503852}
+  - {x: 0.018966103, y: 4.157308, z: -4.506672}
+  - {x: 0.021900168, y: 3.19, z: -4.507704}
+  - {x: 0.018966101, y: 2.490641, z: -4.506672}
+  - {x: 0.010950085, y: 2.0233335, z: -4.503852}
+  - {x: -0.0000000019145734, y: 1.6900002, z: -4.5}
+>>>>>>> ef6b62c90fc3323262abefa010a9fdd60460d8c2
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.1
