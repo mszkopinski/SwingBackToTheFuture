@@ -8,12 +8,26 @@ public class Player : MonoSingleton<Player>
     [Header("Debug")]
     [SerializeField] bool enablePlayerLogging = false;
 
-    public bool IsPlayerPlaced { get; set; } = false;
+    float playerReleasedLastYPosition = 0;
+    public bool IsPlayerPlaced 
+    {
+        get { return isPlayerPlaced; }
+        set 
+        {
+            if (isPlayerPlaced == value)
+                return;
+
+            isPlayerPlaced = value;
+
+        }
+    }
     public Vector3 PlayerPlacedPosition { get; private set; }
     public Animator PlayerAnimator { get; private set; }
     
     Quaternion defaultRotation;
+    Vector3 defaultPosition;
     Rigidbody rb;
+    bool isPlayerPlaced;
 
     public EventHandler PlayerInstantiated;
 
@@ -26,7 +40,16 @@ public class Player : MonoSingleton<Player>
     void Start() 
     {
         defaultRotation = transform.rotation;
+        defaultPosition = transform.position;
         OnPlayerInstatiated();
+    }
+
+    void Update()
+    {
+        if (playerReleasedLastYPosition != 0)
+        {
+            
+        }
     }
 
     public void SetPlayerPlacement(Transform swingSitTransform)
@@ -43,9 +66,19 @@ public class Player : MonoSingleton<Player>
 
         transform.parent = swingSitTransform;
         transform.position = swingSitTransform.position;
-        transform.rotation = defaultRotation;
+        ResetRotation();
 
         IsPlayerPlaced = true;
+    }
+
+    void Respawn()
+    {
+        ResetRotation();
+    }   
+
+    void ResetRotation()
+    {
+        transform.rotation = defaultRotation;
     }
 
     protected void OnPlayerInstatiated()

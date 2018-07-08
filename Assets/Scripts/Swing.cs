@@ -14,7 +14,6 @@ public class Swing : MonoBehaviour
 	[SerializeField] float maximumSwingPushAngle = 45f;
 
 	[Header("Debug Trigger")]
-	[SerializeField] bool isHooked = true;
 	[SerializeField] public bool IsControlledSwing = false;
 	[SerializeField] bool IsControlledInitialy = false;
 
@@ -69,7 +68,6 @@ public class Swing : MonoBehaviour
 
 		if (!isSwingButtonRecentlyPressed)
 		{
-			Debug.Log("SWINGUJ KURWOOO");
 			swingSitRigidbody.AddForce((swingSitRigidbody.velocity.x > 0 ? swingSit.transform.right : -swingSit.transform.right) * swingSitPushForce * Time.deltaTime);
 			isSwingButtonRecentlyPressed = true;
 		}
